@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-title-en="The Absorption Atlas now covers double-stage and crystallisation processes · Dorian Höffner" data-title-de="Der Absorption Atlas rechnet jetzt auch zweistufige Prozesse und Kristallisation · Dorian Höffner">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Absorption Atlas now covers double-stage and crystallisation processes · Dorian Höffner</title>
+<meta name="description" content="The storage-cycle module of the Absorption Atlas now computes single- and double-stage absorption storage processes, each with and without crystallisation.">
+<meta name="author" content="Dorian Höffner">
+<link rel="canonical" href="https://dorianhoeffner.com/notes/2026-10-absorption-atlas-processes/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Absorption Atlas now covers double-stage and crystallisation processes">
+<meta property="og:url" content="https://dorianhoeffner.com/notes/2026-10-absorption-atlas-processes/">
+<meta property="og:image" content="https://dorianhoeffner.com/og.png">
+<meta property="article:published_time" content="2026-10-10">
+<meta name="theme-color" content="#fbfcfb">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../fonts.css">
+<link rel="stylesheet" href="../../site.css">
+<script>
+(function () {
+  var d = document.documentElement, lang = 'en', theme = null;
+  try { lang = localStorage.getItem('dh-lang') || ''; theme = localStorage.getItem('dh-theme'); } catch (e) {}
+  if (lang !== 'de' && lang !== 'en') lang = /^de\b/i.test(navigator.language || '') ? 'de' : 'en';
+  d.setAttribute('data-lang', lang); d.lang = lang;
+  if (theme === 'light' || theme === 'dark') d.setAttribute('data-theme', theme);
+})();
+</script>
+<script src="../../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="de">Zum Inhalt</span></a>
+
+<header class="site-header is-compact" data-compact>
+  <div class="wrap">
+    <a class="ident" href="../../">
+      <span class="avatar" aria-hidden="true"></span>
+      <span class="ident-text">
+        <span class="ident-name">Dorian Höffner</span>
+        <span class="ident-sub"><span data-l="en">Thermal energy storage</span><span data-l="de">Thermische Energiespeicher</span>&nbsp;· TU Berlin</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../../#tools"><span data-l="en">Tools</span><span data-l="de">Werkzeuge</span></a>
+      <a href="../../publications/"><span data-l="en">Publications</span><span data-l="de">Publikationen</span></a>
+      <a href="../" aria-current="true"><span data-l="en">Notes</span><span data-l="de">Notizen</span></a>
+      <a href="../../#about"><span data-l="en">About</span><span data-l="de">Über mich</span></a>
+      <div class="nav-controls">
+        <div class="seg" role="group" aria-label="Language / Sprache">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </nav>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Language / Sprache">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Dark mode / Dunkelmodus" title="Dark mode / Dunkelmodus">
+        <svg class="ts-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="ts-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+        <span class="ts-thumb" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="iconbtn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="wrap article">
+    <a class="back" href="../">← <span data-l="en">All notes</span><span data-l="de">Alle Notizen</span></a>
+    <h1><span data-l="en">The Absorption Atlas now covers double-stage and crystallisation processes</span><span data-l="de">Der Absorption Atlas rechnet jetzt auch zweistufige Prozesse und Kristallisation</span></h1>
+    <p class="note-meta"><time datetime="2026-10"><span data-l="en">October 2026</span><span data-l="de">Oktober 2026</span></time> · <span data-l="en">Tool update</span><span data-l="de">Werkzeug-Update</span></p>
+
+    <div data-l="en">
+      <p>The storage-cycle module of the <a href="/absorptionlib/">Absorption Atlas</a> now computes all four processes from our paper in <i>Energy Conversion and Management</i> (Höffner, Ziegler and Elbel 2026):</p>
+      <ul>
+        <li>single-stage discharge,</li>
+        <li>single-stage discharge with crystallisation of the salt,</li>
+        <li>double-stage discharge,</li>
+        <li>double-stage discharge with crystallisation.</li>
+      </ul>
+      <p>For every process and working pair (aqueous NaOH, LiBr, LiCl and CaCl₂) the atlas shows the energy storage density over the temperature lift, the cycle in a p–T diagram and a schematic of the process. The figure shows the result for NaOH–water.</p>
+    </div>
+    <div data-l="de">
+      <p>Das Speicherzyklus-Modul des <a href="/absorptionlib/">Absorption Atlas</a> rechnet jetzt alle vier Prozesse aus unserem Artikel in <i>Energy Conversion and Management</i> (Höffner, Ziegler und Elbel 2026):</p>
+      <ul>
+        <li>einstufige Entladung,</li>
+        <li>einstufige Entladung mit Kristallisation des Salzes,</li>
+        <li>zweistufige Entladung,</li>
+        <li>zweistufige Entladung mit Kristallisation.</li>
+      </ul>
+      <p>Für jeden Prozess und jedes Arbeitsstoffpaar (wässrige NaOH-, LiBr-, LiCl- und CaCl₂-Lösung) zeigt der Atlas die Energiespeicherdichte über dem Temperaturhub, den Zyklus im p–T-Diagramm und ein Schema des Prozesses. Die Abbildung zeigt das Ergebnis für NaOH–Wasser.</p>
+    </div>
+
+    <figure class="plot">
+<svg viewBox="0 0 320 200" role="img" aria-label="Energy storage density of NaOH–water over temperature lift for four storage processes">
+<rect x="34" y="20" width="252" height="144" class="frame"/>
+<g class="grid"><line x1="118" y1="20" x2="118" y2="164"/><line x1="202" y1="20" x2="202" y2="164"/><line x1="34" y1="122.9" x2="286" y2="122.9"/><line x1="34" y1="81.7" x2="286" y2="81.7"/><line x1="34" y1="40.6" x2="286" y2="40.6"/></g>
+<text class="ax" x="34" y="176" text-anchor="middle">0</text><text class="ax" x="118" y="176" text-anchor="middle">20</text><text class="ax" x="202" y="176" text-anchor="middle">40</text><text class="ax" x="286" y="176" text-anchor="middle">60</text>
+<text class="ax" x="29" y="167.5" text-anchor="end">0</text><text class="ax" x="29" y="126.4" text-anchor="end">200</text><text class="ax" x="29" y="85.2" text-anchor="end">400</text><text class="ax" x="29" y="44.1" text-anchor="end">600</text>
+<text class="ax" x="34" y="14"><tspan data-l="en">Energy density in kWh/m³</tspan><tspan data-l="de">Energiedichte in kWh/m³</tspan></text>
+<text class="ax" x="160" y="190" text-anchor="middle"><tspan data-l="en">Temperature lift in K</tspan><tspan data-l="de">Temperaturhub in K</tspan></text>
+<text class="ax" x="286" y="14" text-anchor="end">NaOH–H₂O</text>
+<path class="s-naoh" d="M34.0,22.8 L39.9,33.6 L45.9,41.5 L51.8,48.0 L57.8,53.5 L63.7,58.7 L69.6,63.5 L75.6,67.9 L81.5,72.5 L87.4,76.6 L93.4,80.8 L99.3,84.9 L105.3,89.2 L111.2,93.0 L117.1,97.2 L123.1,101.2 L129.0,105.0 L134.9,109.2 L140.9,113.2 L146.8,117.2 L152.8,121.4 L158.7,125.6 L164.6,129.9 L170.6,134.3 L176.5,138.8 L182.4,143.3 L188.4,147.9 L194.3,152.6 L200.3,157.8 L206.2,163.0" fill="none" stroke-width="1.6" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="s-ink" d="M38.2,94.4 L46.7,97.3 L55.3,99.4 L63.8,101.7 L72.4,103.3 L80.9,104.9 L89.5,106.1 L98.0,107.4 L106.6,109.0 L115.1,110.2 L123.6,111.6 L132.2,113.1 L140.7,114.3 L149.3,115.5 L157.8,116.9 L166.4,118.2 L174.9,119.5 L183.5,121.2 L192.0,122.3 L200.6,123.8 L209.1,125.2 L217.6,126.7 L226.2,128.0 L234.7,129.7 L243.3,131.2 L251.8,132.6 L260.4,134.3 L268.9,135.6 L277.5,137.4 L286.0,138.8" fill="none" stroke-width="1.6" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="s-naoh" d="M34.0,22.7 L39.9,24.3 L45.9,26.6 L51.8,28.9 L57.8,31.2 L63.7,33.6 L69.6,35.9 L75.6,38.2 L81.5,40.6 L87.4,42.7 L93.4,45.0 L99.3,47.2 L105.3,49.6 L111.2,51.7 L117.1,54.2 L123.1,56.6 L129.0,58.8 L134.9,61.3 L140.9,63.7 L146.8,66.2 L152.8,68.8 L158.7,71.4 L164.6,74.1 L170.6,76.9 L176.5,79.7 L182.4,82.6 L188.4,85.6 L194.3,88.6 L200.3,91.9 L206.2,95.4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="s-ink" d="M38.2,93.1 L46.7,93.8 L55.3,95.3 L63.8,95.3 L72.4,96.5 L80.9,96.9 L89.5,97.1 L98.0,97.9 L106.6,98.1 L115.1,98.6 L123.6,99.0 L132.2,99.6 L140.7,100.0 L149.3,100.0 L157.8,100.7 L166.4,101.1 L174.9,101.6 L183.5,101.7 L192.0,102.4 L200.6,102.6 L209.1,102.9 L217.6,103.3 L226.2,103.8 L234.7,104.1 L243.3,104.5 L251.8,104.5 L260.4,105.1 L268.9,105.7 L277.5,105.4 L286.0,106.2" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line class="s-naoh" x1="185.2" y1="29.5" x2="201.2" y2="29.5" stroke-width="2"/><text class="leg" x="206.2" y="33"><tspan data-l="en">1-stage + cryst.</tspan><tspan data-l="de">1-stufig + Krist.</tspan></text>
+<line class="s-naoh" x1="185.2" y1="41.5" x2="201.2" y2="41.5" stroke-width="1.6" stroke-dasharray="5 4"/><text class="leg" x="206.2" y="45"><tspan data-l="en">1-stage</tspan><tspan data-l="de">1-stufig</tspan></text>
+<line class="s-ink" x1="185.2" y1="53.5" x2="201.2" y2="53.5" stroke-width="2"/><text class="leg" x="206.2" y="57"><tspan data-l="en">2-stage + cryst.</tspan><tspan data-l="de">2-stufig + Krist.</tspan></text>
+<line class="s-ink" x1="185.2" y1="65.5" x2="201.2" y2="65.5" stroke-width="1.6" stroke-dasharray="5 4"/><text class="leg" x="206.2" y="69"><tspan data-l="en">2-stage</tspan><tspan data-l="de">2-stufig</tspan></text>
+</svg>
+      <figcaption><span data-l="en">Energy density of NaOH–water over temperature lift for the four processes (Höffner, Ziegler and Elbel 2026, Fig. 7).</span><span data-l="de">Energiedichte von NaOH–Wasser über dem Temperaturhub für die vier Prozesse (Höffner, Ziegler und Elbel 2026, Abb. 7).</span></figcaption>
+    </figure>
+
+    <p data-l="en">The atlas uses one consistent formulation for all four salts. Its values can therefore differ slightly from the published curves, which were computed with separate scripts per salt. You can overlay the published curves in the atlas to compare.</p>
+    <p data-l="de">Der Atlas verwendet für alle vier Salze dieselbe Formulierung. Seine Werte können daher leicht von den veröffentlichten Kurven abweichen, die mit getrennten Skripten je Salz berechnet wurden. Die veröffentlichten Kurven lassen sich im Atlas zum Vergleich einblenden.</p>
+
+    <p class="links">
+      <a class="more" href="/absorptionlib/"><span data-l="en">Open the Absorption Atlas</span><span data-l="de">Absorption Atlas öffnen</span> →</a>
+      <a class="more" href="https://doi.org/10.1016/j.enconman.2026.121845" rel="noopener"><span data-l="en">Read the paper (open access)</span><span data-l="de">Zum Artikel (Open Access)</span> ↗</a>
+    </p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Dorian Höffner</span>
+    <span><a href="../../legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, no tracking</span><span data-l="de">Keine Cookies, kein Tracking</span></span>
+  </div>
+</footer>
+</body>
+</html>

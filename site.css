@@ -1,0 +1,251 @@
+/* Shared styles for every page of dorianhoeffner.com (home, publications, notes).
+   Same paper-and-ink system as the Absorption Atlas: colour is kept for data and the one accent.
+   The tools (absorptionlib/, refrigerant-atlas/) and legal.html keep their own styles. */
+
+:root {
+  --bg: #fbfcfb;
+  --surface: #ffffff;
+  --surface-2: #f2f4f3;
+  --ink: #111816;
+  --ink-2: #44504c;
+  --muted: #5d6965;
+  --rule: #d3dbd7;
+  --rule-soft: #e2e8e5;
+  --grid-strong: #b9c6c0;
+  --accent: #1f6cc6;
+  --oa: #13785a;
+  --c-NaOH: #2a78d6; --c-LiBr: #eb6834; --c-LiCl: #1baf7a; --c-CaCl2: #9e3378;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Source Code Pro", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --wrap: 1080px;
+  --ease: 0.25s ease;
+  /* Portrait in the header. Once img/portrait.jpg exists (square, at least 160 x 160 px),
+     replace the placeholder line below with:   --portrait: url(/img/portrait.jpg);   */
+  --portrait: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='26' r='10' fill='none' stroke='%2384918d' stroke-width='2'/%3E%3Cpath d='M14 54c3-9 10-14 18-14s15 5 18 14' fill='none' stroke='%2384918d' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+/* Light by default; dark only when chosen with the switch (stored as dh-theme, shared with the tools). */
+:root[data-theme="dark"] {
+  --bg: #0b0f0e; --surface: #141a19; --surface-2: #1b2321;
+  --ink: #e8eeec; --ink-2: #b2bdb9; --muted: #8a9793; --rule: #2a3431; --rule-soft: #212a28; --grid-strong: #3a4744;
+  --accent: #6aa8f0; --oa: #4cc79a;
+  --c-NaOH: #3987e5; --c-LiBr: #d95926; --c-LiCl: #199e70; --c-CaCl2: #b82989;
+  color-scheme: dark;
+}
+
+/* Bilingual content: both languages are in the HTML, the inactive one is hidden. */
+html[data-lang="en"] [data-l="de"], html[data-lang="de"] [data-l="en"] { display: none !important; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } :root { --ease: 0s; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-sans); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+code { font-family: var(--font-mono); font-size: 0.9em; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 12px; top: -48px; background: var(--ink); color: var(--bg); padding: 8px 12px; border-radius: 6px; z-index: 30; }
+.skip:focus { top: 12px; }
+.more { color: var(--accent); font-weight: 600; font-size: 15px; text-decoration: none; }
+.more:hover { text-decoration: underline; color: var(--accent); }
+
+/* ---------- header: large at the top of the home page, compact once you scroll (site.js) ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow var(--ease);
+}
+.site-header > .wrap { display: flex; align-items: center; gap: 8px 20px; padding-block: 18px; transition: padding-block var(--ease); }
+.ident { display: flex; align-items: center; gap: 16px; min-width: 0; min-height: 44px; text-decoration: none; color: inherit; transition: gap var(--ease); }
+.ident:hover { color: inherit; }
+.avatar {
+  flex: none; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--surface-2) var(--portrait) center / cover no-repeat;
+  border: 1px solid var(--rule);
+  transition: width var(--ease), height var(--ease), opacity var(--ease), border-width var(--ease);
+}
+.ident-text { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; min-width: 0; }
+.ident-name { font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -0.005em; white-space: nowrap; transition: font-size var(--ease); }
+.ident-sub { font-size: 16px; color: var(--muted); line-height: 1.3; transition: font-size var(--ease); }
+.site-header.is-compact { box-shadow: 0 6px 18px -16px rgba(0, 0, 0, 0.45); }
+.site-header.is-compact > .wrap { padding-block: 8px; }
+/* After scrolling, the photo disappears and name + "TU Berlin" shrink. */
+.site-header.is-compact .ident { gap: 0; }
+.site-header.is-compact .avatar { width: 0; height: 0; opacity: 0; border-width: 0; }
+.site-header.is-compact .ident-name { font-size: 16px; }
+.site-header.is-compact .ident-sub { font-size: 14px; }
+
+.nav { display: flex; align-items: center; gap: 0 22px; margin-left: auto; font-size: 15px; }
+.nav a { color: var(--ink-2); text-decoration: none; padding: 10px 0; white-space: nowrap; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current] { color: var(--ink); border-bottom-color: var(--ink); }
+.controls { display: flex; align-items: center; gap: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button, .iconbtn {
+  font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted);
+  background: transparent; border: 0; padding: 5px 9px; cursor: pointer; min-height: 32px;
+}
+.seg button[aria-pressed="true"] { color: var(--ink); background: var(--surface-2); }
+.iconbtn { border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); display: inline-grid; place-items: center; width: 34px; padding: 0; }
+.iconbtn:hover, .seg button:hover { color: var(--ink); }
+.iconbtn svg { width: 17px; height: 17px; }
+/* Light/dark switch: sun on the left, moon on the right, the thumb sits under the active one. */
+.theme-switch {
+  position: relative; flex: none; width: 58px; height: 32px; padding: 0; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--surface-2); color: var(--muted);
+}
+.theme-switch::after { content: ""; position: absolute; inset: -6px; }
+.theme-switch svg { position: absolute; top: 50%; width: 16px; height: 16px; margin-top: -8px; z-index: 1; transition: color 0.2s ease; }
+.theme-switch .ts-sun { left: 7px; color: var(--ink); }
+.theme-switch .ts-moon { right: 7px; }
+.theme-switch .ts-thumb {
+  position: absolute; top: 2px; left: 2px; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--rule); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+.theme-switch:hover { border-color: var(--grid-strong); }
+:root[data-theme="dark"] .theme-switch .ts-thumb { transform: translateX(24px); }
+:root[data-theme="dark"] .theme-switch .ts-sun { color: var(--muted); }
+:root[data-theme="dark"] .theme-switch .ts-moon { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .theme-switch .ts-thumb { transition: none; } }
+
+.menu-btn, .nav-controls { display: none; }
+/* Narrow screens: menu button; language and theme move into the menu; name and "TU Berlin" stack. */
+@media (max-width: 1000px) {
+  .menu-btn { display: inline-grid; }
+  .controls .seg { display: none; }
+  .site-header > .wrap { flex-wrap: wrap; }
+  .ident { flex: 1 1 0; }
+  .controls { flex: none; margin-left: auto; }
+  .nav { order: 3; width: 100%; margin: 0; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 10px; display: none; }
+  .site-header.open .nav { display: flex; }
+  .nav a { padding: 11px 2px; border-bottom: 0; border-top: 1px solid var(--rule-soft); font-size: 16px; }
+  .nav a[aria-current] { font-weight: 600; }
+  .site-header.open .nav-controls { display: flex; gap: 8px; padding-top: 12px; border-top: 1px solid var(--rule-soft); }
+  .nav-controls .seg button { min-height: 40px; min-width: 44px; }
+}
+@media (max-width: 640px) {
+  .ident-text { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; min-width: 0; }
+  .ident-sub { max-width: 100%; }
+  .avatar { width: 52px; height: 52px; }
+  .ident { gap: 12px; }
+  .ident-name { font-size: 19px; }
+  .ident-sub { font-size: 14.5px; }
+  .site-header.is-compact .ident-name { font-size: 15.5px; }
+  .site-header.is-compact .ident-sub { font-size: 12.5px; }
+}
+
+/* ---------- page blocks ---------- */
+.lede { margin: 0; max-width: 34em; font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45; letter-spacing: -0.005em; }
+.intro { padding-block: 44px 8px; }
+section.block { padding-block: 48px 24px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 20px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+.sec-head h2 { margin: 0; font-family: var(--font-serif); font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+.sec-head .aside { font-size: 15px; color: var(--muted); }
+
+/* page title on subpages (publications, notes) */
+.page-head { padding-block: 40px 8px; }
+.page-head h1 { margin: 0 0 10px; font-family: var(--font-serif); font-size: clamp(30px, 4vw, 38px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.15; }
+.page-head p { margin: 0; max-width: 40em; color: var(--ink-2); }
+
+/* ---------- tools: one small box per tool; the grid takes any number of boxes ---------- */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 16px; margin-top: 20px; }
+.tool { display: flex; flex-direction: column; padding: 18px 20px 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; transition: border-color 0.15s ease; }
+.tool:hover { border-color: var(--grid-strong); }
+.tool-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.tool-top svg { width: 22px; height: 22px; flex: none; color: var(--accent); }
+.kind { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.tool h3 { margin: 0 0 6px; font-family: var(--font-serif); font-size: 21px; font-weight: 600; line-height: 1.25; }
+.tool h3.mono { font-family: var(--font-mono); font-size: 19px; font-weight: 500; }
+.tool h3 a { text-decoration: none; }
+.tool .desc { margin: 0 0 12px; font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+.tool ul { margin: 0 0 16px; padding-left: 18px; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+.tool-links { margin: auto 0 0; padding-top: 12px; border-top: 1px solid var(--rule-soft); display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; font-weight: 600; }
+.tool-links a { color: var(--ink-2); }
+.tool-links a.go { color: var(--ink); }
+.tool-links a:hover { color: var(--accent); }
+
+/* ---------- publications ---------- */
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pub { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 4px 24px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.pub .yr { font-family: var(--font-mono); font-size: 14px; color: var(--muted); }
+.pub .t { margin: 0 0 3px; font-family: var(--font-serif); font-size: 19px; font-weight: 600; line-height: 1.35; }
+.pub .t a { text-decoration: none; }
+.pub .t a:hover { text-decoration: underline; }
+.pub .meta { margin: 0; font-size: 15px; color: var(--ink-2); }
+.pub .meta b { color: var(--ink); font-weight: 600; }
+.pub .side { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.pub .side a { font-weight: 600; white-space: nowrap; color: var(--accent); text-decoration: none; }
+.pub .side a:hover { text-decoration: underline; }
+.badge { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 7px; white-space: nowrap; }
+.badge.oa { color: var(--oa); border-color: color-mix(in srgb, var(--oa) 45%, var(--rule)); }
+section.block.pub-group { padding-block: 36px 0; }
+section.block.pub-group:last-of-type { padding-bottom: 56px; }
+@media (max-width: 640px) {
+  .pub { grid-template-columns: 1fr; }
+  .pub .side { margin-top: 4px; }
+}
+
+/* ---------- notes ---------- */
+.note-feature { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px 40px; padding: 28px 0 30px; border-bottom: 1px solid var(--rule); }
+.note-feature > div { flex: 1 1 380px; min-width: 0; }
+.note-feature > .plot { flex: 1 1 420px; }
+.note-feature h3 { margin: 0 0 10px; font-family: var(--font-serif); font-size: 26px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+.note-feature p { margin: 0 0 14px; color: var(--ink-2); }
+.note-meta { margin: 0 0 6px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.note-row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.note-row .note-meta { margin: 0; padding-top: 6px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+.note-row h3 { margin: 0 0 4px; font-family: var(--font-serif); font-size: 21px; font-weight: 600; line-height: 1.3; }
+.note-row p { margin: 0; font-size: 16px; color: var(--ink-2); }
+.note-feature h3 a, .note-row h3 a { text-decoration: none; }
+.note-feature h3 a:hover, .note-row h3 a:hover { text-decoration: underline; }
+.ext { font-size: 0.8em; color: var(--muted); }
+@media (max-width: 640px) { .note-row { grid-template-columns: 1fr; } }
+
+/* small data plots (inline SVG, 320 x 200 viewBox) */
+.plot { margin: 0; padding: 14px 18px 10px; background: var(--surface-2); border: 1px solid var(--rule); border-radius: 10px; min-width: 0; }
+.plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+.plot .frame { fill: var(--surface); stroke: var(--rule); stroke-width: 1; }
+.plot .grid line { stroke: var(--rule-soft); stroke-width: 1; }
+.plot .ax { font-family: var(--font-sans); font-size: 9.5px; fill: var(--muted); }
+.plot .leg { font-family: var(--font-sans); font-size: 9.5px; fill: var(--ink-2); }
+.plot .s-naoh { stroke: var(--c-NaOH); }
+.plot .s-ink { stroke: var(--ink); }
+.plot figcaption { margin-top: 4px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+
+/* a single note page */
+.article { max-width: 720px; padding-block: 40px 56px; }
+.article .back { font-size: 15px; color: var(--ink-2); text-decoration: none; }
+.article .back:hover { color: var(--accent); }
+.article h1 { margin: 18px 0 8px; font-family: var(--font-serif); font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.2; letter-spacing: -0.015em; }
+.article p, .article li { color: var(--ink-2); }
+.article ul, .article ol { padding-left: 22px; }
+.article .plot { margin: 28px 0; }
+.article .links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+/* ---------- about + footer ---------- */
+.about { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 48px; padding-block: 40px 56px; }
+.about p { margin: 0; }
+.about .text { flex: 1 1 460px; min-width: 0; font-size: 16px; color: var(--ink-2); }
+.about .contact { flex: 0 1 auto; display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 15px; font-weight: 600; }
+.about .contact a { color: var(--accent); text-decoration: none; }
+.about .contact a:hover { text-decoration: underline; }
+footer { border-top: 1px solid var(--rule); padding-block: 22px 36px; font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; }
+footer a { color: var(--ink-2); }
+
+@media print {
+  .site-header { position: static; }
+  .controls, .nav { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+}

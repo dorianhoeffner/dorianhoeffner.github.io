@@ -4,61 +4,47 @@ Personal research website of Dorian Höffner. Plain HTML, no build step, hosted 
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home page (EN/DE, light/dark), all content |
+| `index.html` | Home page: tools, selected publications, latest notes, short about (EN/DE, light/dark) |
+| `publications/index.html` | Full publication list, grouped by type |
+| `notes/index.html` | List of all notes |
+| `notes/<yyyy-mm-title>/index.html` | One note per folder |
+| `notes/_template/index.html` | Template for a new note (not linked, `noindex`) |
+| `site.css` | Shared styles for home, publications and notes (colours, header, tool boxes, lists) |
+| `site.js` | Shared behaviour: language, dark mode, mobile menu, shrinking header |
 | `legal.html` | Legal notice and privacy policy |
 | `404.html` | Page shown for broken links |
-| `fonts.css`, `fonts/` | Self-hosted Source Serif 4 / Source Sans 3 / Source Code Pro (same as the Absorption Atlas, no Google Fonts) |
-| `img/` | Images, e.g. a later `portrait.jpg` |
-| `refrigerant-atlas/index.html` | Refrigerant Atlas web app (single file, all property data embedded), served at `dorianhoeffner.com/refrigerant-atlas/` |
+| `fonts.css`, `fonts/` | Self-hosted Source Serif 4 / Source Sans 3 / Source Code Pro (no Google Fonts) |
+| `img/` | Images, e.g. `portrait.jpg` |
+| `refrigerant-atlas/index.html` | Refrigerant Atlas web app, served at `dorianhoeffner.com/refrigerant-atlas/` |
 | `og.png` | Preview image for links shared on LinkedIn, Slack, email etc. |
 | `favicon.svg`, `robots.txt`, `sitemap.xml`, `CNAME`, `.nojekyll` | Hosting and search engine files |
 
-The Refrigerant Atlas lives in this repository (`refrigerant-atlas/`). The Absorption Atlas lives in its own repository and is served below this domain automatically:
+The Absorption Atlas lives in its own repository and is served below this domain automatically:
 `dorianhoeffner.com/absorptionlib/` comes from the `docs/` folder of `dorianhoeffner/absorptionlib`.
-
-## Publish (first time)
-
-1. On GitHub, create a **public** repository named exactly `dorianhoeffner.github.io` (no README, no licence).
-2. In this folder:
-   ```bash
-   git add -A
-   git commit -m "Home page"
-   git branch -M main
-   git remote add origin git@github.com:dorianhoeffner/dorianhoeffner.github.io.git
-   git push -u origin main
-   ```
-3. Repository → Settings → Pages: Source "Deploy from a branch", branch `main`, folder `/ (root)`.
-4. At your domain registrar, set these DNS records for `dorianhoeffner.com`:
-   ```
-   A     @    185.199.108.153
-   A     @    185.199.109.153
-   A     @    185.199.110.153
-   A     @    185.199.111.153
-   AAAA  @    2606:50c0:8000::153
-   AAAA  @    2606:50c0:8001::153
-   AAAA  @    2606:50c0:8002::153
-   AAAA  @    2606:50c0:8003::153
-   CNAME www  dorianhoeffner.github.io.
-   ```
-   Remove any other A/AAAA records the registrar created for `@` (parking page).
-5. Settings → Pages → Custom domain: `dorianhoeffner.com` (already set by the `CNAME` file). Once the DNS check is green, tick **Enforce HTTPS** (can take up to an hour).
-6. Recommended: GitHub → your profile Settings → Pages → **Add a verified domain** for `dorianhoeffner.com`, so nobody else can claim it on GitHub.
-7. Push the updated Absorption Atlas (`absorptionlib` repo) as well. It now links back to the home page and uses `https://dorianhoeffner.com/absorptionlib/` as canonical URL. Do **not** add a CNAME file to that repo.
-
-Old links such as `dorianhoeffner.github.io/absorptionlib/` keep working: GitHub redirects them to the new domain.
 
 ## Editing
 
-Every text exists twice in `index.html`, once with `data-l="en"` and once with `data-l="de"`. Change both.
+Every text exists twice, once with `data-l="en"` and once with `data-l="de"`. Change both.
+Each page also carries its title twice on the `<html>` tag (`data-title-en`, `data-title-de`).
 
-- **Portrait**: put a square photo at `img/portrait.jpg` (at least 440 × 440 px) and replace the `<div class="portrait">…</div>` block with
-  `<div class="portrait"><img src="img/portrait.jpg" alt="Dorian Höffner" width="440" height="440"></div>`
-- **Career**: the two entries with `class="step todo"` are placeholders. Fill them in, then delete `todo` from the class and the two `todo-flag` spans. Copy a `<li class="step">` block for further stations. Add the start year of the current position where the `TODO` comment is.
-- **Profiles**: add ORCID, Google Scholar or LinkedIn next to the GitHub button (hero) and in the contact list; also add the URLs to `"sameAs"` in the JSON-LD block in `<head>`.
-- **New tool**: copy one `<article class="tool">` block. Every card has the same parts: a preview plate (a small SVG diagram with a 320 × 200 viewBox, or a short code example), the kind of tool, the title, one sentence and a row of links. Add the URL to `sitemap.xml`.
-- **Publication**: copy an `<li class="pub">` block; newest first.
+- **Portrait**: put a square photo at `img/portrait.jpg` (at least 160 × 160 px; it is shown at 64 px and 32 px). In `site.css`, replace the `--portrait: url("data:image/svg+xml,…")` line with `--portrait: url(/img/portrait.jpg);`. This changes the header on every page at once.
+- **New tool**: in `index.html`, copy one `<article class="tool">` block inside `tool-grid`. Each box has an icon (24 × 24 stroke SVG), the kind of tool, the name, one sentence, three bullets with the core functions, and a row of links (the first with `class="go"`). The grid adds rows by itself. Add the tool's URL to `sitemap.xml`.
+- **Publication**: in `publications/index.html`, copy an `<li class="pub">` block into the right group, newest first. Groups for talks and theses are prepared at the end of the file (commented out). The home page shows a selection of 3 to 5 entries: copy the same `<li>` block there.
+- **Note**: copy the folder `notes/_template/` to `notes/<yyyy-mm-short-title>/`, follow the steps in its comment (fill the placeholders, delete the `noindex` line), then add one `<article class="note-row">` to `notes/index.html` and to the Notes section of `index.html`, and the URL to `sitemap.xml`. On the home page, the newest note can use the larger `note-feature` layout with a figure; move the previous one down to a `note-row`. A note may also link straight to an external page (mark it with `<span class="ext">↗</span>`).
+- **Profiles**: add ORCID, Google Scholar, LinkedIn or a CV link in the About block of `index.html` (`<p class="contact">`), and the URLs to `"sameAs"` in the JSON-LD block in `<head>`.
+- **Header**: on the home page the header starts large (photo, name, "Thermal energy storage · TU Berlin") and shrinks after 64 px of scrolling. Subpages use `class="site-header is-compact" data-compact`, so they start compact.
 
-To preview locally, open `index.html` in a browser, or run `python3 -m http.server` in this folder and open http://localhost:8000 (links to `/absorptionlib/` only work online).
+To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000 (links to `/absorptionlib/` only work online, and the portrait path `/img/portrait.jpg` needs the server, not a double-click on the file).
+
+## Publish
+
+Changes go live a minute or two after a push:
+
+```bash
+git add -A
+git commit -m "Describe the change"
+git push
+```
 
 ## Legal note
 
