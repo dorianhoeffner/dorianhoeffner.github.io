@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en" data-lang="en" data-title-en="Notes · Dorian Höffner" data-title-de="Notizen · Dorian Höffner">
+<html lang="en" data-lang="en" data-title-en="Blog &amp; Updates · Dorian Höffner" data-title-de="Blog &amp; Updates · Dorian Höffner">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Notes · Dorian Höffner</title>
-<meta name="description" content="Short notes on tools, data and results from research on thermal energy storage at TU Berlin.">
+<title>Blog &amp; Updates · Dorian Höffner</title>
+<meta name="description" content="Blog and updates by Dorian Höffner, TU Berlin: new tools, papers and software on thermal energy storage, absorption thermal batteries and energy systems, since 2022.">
 <meta name="author" content="Dorian Höffner">
 <link rel="canonical" href="https://dorianhoeffner.com/notes/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Notes · Dorian Höffner">
+<meta property="og:title" content="Blog &amp; Updates · Dorian Höffner">
 <meta property="og:url" content="https://dorianhoeffner.com/notes/">
 <meta property="og:image" content="https://dorianhoeffner.com/og.png">
 <meta name="theme-color" content="#fbfcfb">
@@ -25,6 +25,7 @@
 })();
 </script>
 <script src="../site.js" defer></script>
+<script src="/count.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="de">Zum Inhalt</span></a>
@@ -35,14 +36,13 @@
       <span class="avatar" aria-hidden="true"></span>
       <span class="ident-text">
         <span class="ident-name">Dorian Höffner</span>
-        <span class="ident-sub"><span data-l="en">Thermal energy storage</span><span data-l="de">Thermische Energiespeicher</span>&nbsp;· TU Berlin</span>
+        <span class="ident-sub"><span data-l="en">Research Blog</span><span data-l="de">Forschungsblog</span>&nbsp;· TU Berlin</span>
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="../#tools"><span data-l="en">Tools</span><span data-l="de">Werkzeuge</span></a>
+      <a href="../#tools"><span data-l="en">Tools</span><span data-l="de">Tools</span></a>
       <a href="../publications/"><span data-l="en">Publications</span><span data-l="de">Publikationen</span></a>
-      <a href="./" aria-current="page"><span data-l="en">Notes</span><span data-l="de">Notizen</span></a>
-      <a href="../#about"><span data-l="en">About</span><span data-l="de">Über mich</span></a>
+      <a href="./" aria-current="page"><span data-l="en">Blog &amp; Updates</span><span data-l="de">Blog &amp; Updates</span></a>
       <div class="nav-controls">
         <div class="seg" role="group" aria-label="Language / Sprache">
           <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
@@ -69,23 +69,31 @@
 
 <main id="main">
   <div class="wrap page-head">
-    <h1><span data-l="en">Notes</span><span data-l="de">Notizen</span></h1>
-    <p data-l="en">Short notes on tools, data and results, newest first.</p>
-    <p data-l="de">Kurze Notizen zu Werkzeugen, Daten und Ergebnissen, die neuesten zuerst.</p>
+    <a class="back" href="../">← <span data-l="en">Home page</span><span data-l="de">Startseite</span></a>
+    <h1>Blog &amp; Updates</h1>
+    <p data-l="en">New tools, papers, reports and software releases, newest first. Each entry is dated to when the work was published.</p>
+    <p data-l="de">Neue Tools, Artikel, Berichte und Software-Versionen, die neuesten zuerst. Jeder Eintrag trägt das Datum, an dem die Arbeit veröffentlicht wurde.</p>
   </div>
 
+  <!-- New entry: copy notes/_template/ to notes/<yyyy-mm-short-title>/, write it, then add one <article class="note-row"> in the right
+       year (newest first) and on the home page. An entry can also link straight to an external page; mark it with <span class="ext">↗</span>. -->
   <section class="block" aria-labelledby="h-2026">
     <div class="wrap">
       <div class="sec-head"><h2 id="h-2026">2026</h2></div>
-
-      <!-- New note: copy notes/_template/ to notes/<yyyy-mm-short-title>/, write it, then add one <article class="note-row"> here
-           (newest first) and on the home page. A note can also link straight to an external page; mark it with <span class="ext">↗</span>. -->
       <article class="note-row">
-        <p class="note-meta"><span data-l="en">Oct 2026 · Tool update</span><span data-l="de">Okt. 2026 · Werkzeug-Update</span></p>
+        <p class="note-meta"><span data-l="en">Oct 2026 · New tool</span><span data-l="de">Okt. 2026 · Neues Tool</span></p>
+        <div>
+          <h3><a href="../refrigerant-atlas/"><span data-l="en">Refrigerant Atlas: cycles and diagrams for 26 refrigerants</span><span data-l="de">Kältemittel-Atlas: Kreisprozesse und Diagramme für 26 Kältemittel</span></a></h3>
+          <p data-l="en">Log p–h diagrams, refrigeration and heat pump cycles and fact sheets, computed in your browser with data from CoolProp.</p>
+          <p data-l="de">log p–h-Diagramme, Kälte- und Wärmepumpenkreisläufe und Steckbriefe, berechnet in Ihrem Browser mit Daten aus CoolProp.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Oct 2026 · Tool update</span><span data-l="de">Okt. 2026 · Tool-Update</span></p>
         <div>
           <h3><a href="2026-10-absorption-atlas-processes/"><span data-l="en">The Absorption Atlas now covers double-stage and crystallisation processes</span><span data-l="de">Der Absorption Atlas rechnet jetzt auch zweistufige Prozesse und Kristallisation</span></a></h3>
-          <p data-l="en">The storage-cycle module now computes all four processes from our paper in Energy Conversion and Management.</p>
-          <p data-l="de">Das Speicherzyklus-Modul rechnet jetzt alle vier Prozesse aus unserem Artikel in Energy Conversion and Management.</p>
+          <p data-l="en">The storage module now computes all four processes from our paper in Energy Conversion and Management.</p>
+          <p data-l="de">Das Speichermodul rechnet jetzt alle vier Prozesse aus unserem Artikel in Energy Conversion and Management.</p>
         </div>
       </article>
       <article class="note-row">
@@ -97,11 +105,111 @@
         </div>
       </article>
       <article class="note-row">
-        <p class="note-meta"><span data-l="en">Oct 2026 · New tool</span><span data-l="de">Okt. 2026 · Neues Werkzeug</span></p>
+        <p class="note-meta"><span data-l="en">Jul 2026 · Paper</span><span data-l="de">Juli 2026 · Artikel</span></p>
         <div>
-          <h3><a href="../refrigerant-atlas/"><span data-l="en">Refrigerant Atlas: cycles and diagrams for 26 refrigerants</span><span data-l="de">Kältemittel-Atlas: Kreisprozesse und Diagramme für 26 Kältemittel</span></a></h3>
-          <p data-l="en">Log p–h diagrams, refrigeration and heat pump cycles and fact sheets, computed in your browser with data from CoolProp.</p>
-          <p data-l="de">log p–h-Diagramme, Kälte- und Wärmepumpenkreisläufe und Steckbriefe, berechnet in Ihrem Browser mit Daten aus CoolProp.</p>
+          <h3><a href="https://doi.org/10.1016/j.enconman.2026.121845" rel="noopener"><span data-l="en">How much heat can an absorption thermal battery store?</span><span data-l="de">Wie viel Wärme speichert ein Absorptionswärmespeicher?</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Open-access paper in Energy Conversion and Management: storage density of four processes under different boundary conditions, for NaOH, LiBr, LiCl and CaCl₂ solutions. The results can be explored in the <a href="/absorptionlib/">Absorption Atlas</a>.</p>
+          <p data-l="de">Open-Access-Artikel in Energy Conversion and Management: Speicherdichte von vier Prozessen unter verschiedenen Randbedingungen, für NaOH-, LiBr-, LiCl- und CaCl₂-Lösungen. Die Ergebnisse lassen sich im <a href="/absorptionlib/">Absorption Atlas</a> erkunden.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="block" aria-labelledby="h-2025">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-2025">2025</h2></div>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Nov 2025 · Conference</span><span data-l="de">Nov. 2025 · Konferenz</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.18462/iir.tptpr2025.1130" rel="noopener"><span data-l="en">Absorption thermal energy storage for seasonal applications</span><span data-l="de">Absorptionswärmespeicher für saisonale Anwendungen</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Conference paper at the IIR conference TPTPR 2025 on the potential of absorption thermal energy storage systems in seasonal application.</p>
+          <p data-l="de">Konferenzbeitrag auf der IIR-Konferenz TPTPR 2025 zum Potenzial von Absorptionswärmespeichern in saisonaler Anwendung.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Oct 2025 · Conference</span><span data-l="de">Okt. 2025 · Konferenz</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.5281/zenodo.17310538" rel="noopener"><span data-l="en">A steady-state model for closed-sorption heat storage</span><span data-l="de">Ein stationäres Modell für geschlossene Sorptionsspeicher</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Capacity and power of thermochemical storage depend strongly on the boundary conditions. This paper presents a steady-state model to evaluate closed-sorption systems under such conditions.</p>
+          <p data-l="de">Kapazität und Leistung thermochemischer Speicher hängen stark von den Randbedingungen ab. Dieser Beitrag stellt ein stationäres Modell vor, mit dem sich geschlossene Sorptionsspeicher unter solchen Bedingungen bewerten lassen.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="block" aria-labelledby="h-2024">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-2024">2024</h2></div>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Nov 2024 · Software</span><span data-l="de">Nov. 2024 · Software</span></p>
+        <div>
+          <h3><a href="https://pypi.org/project/absorptionlib/" rel="noopener"><span data-l="en">absorptionlib published on PyPI</span><span data-l="de">absorptionlib auf PyPI veröffentlicht</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Open-source Python functions for the thermophysical properties of aqueous salt solutions used in absorption storage. Install with <code>pip install absorptionlib</code>.</p>
+          <p data-l="de">Quelloffene Python-Funktionen für die Stoffwerte wässriger Salzlösungen, wie sie in Absorptionsspeichern eingesetzt werden. Installation mit <code>pip install absorptionlib</code>.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Sep 2024 · Project report</span><span data-l="de">Sep. 2024 · Projektbericht</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.5281/zenodo.17276813" rel="noopener"><span data-l="en">Simulation models for NaOH–water sorption storage</span><span data-l="de">Simulationsmodelle für NaOH–Wasser-Sorptionsspeicher</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Two physics-based models of sorption thermal storage with sodium hydroxide and water, one of them for steady-state operating points (BEST-Storage project deliverable).</p>
+          <p data-l="de">Zwei physikalisch basierte Modelle für Sorptionswärmespeicher mit Natronlauge und Wasser, eines davon für stationäre Betriebspunkte (Projektbericht BEST-Storage).</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Jul 2024 · Paper</span><span data-l="de">Juli 2024 · Artikel</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.1016/j.energy.2024.132542" rel="noopener"><span data-l="en">Which software for planning energy systems?</span><span data-l="de">Welche Software für die Energiesystemplanung?</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Open-access meta-review in Energy on software for planning and analysing energy systems, with special attention to urban energy systems and district heating.</p>
+          <p data-l="de">Open-Access-Meta-Review in Energy zu Software für die Planung und Analyse von Energiesystemen, mit besonderem Blick auf urbane Energiesysteme und Fernwärme.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="block" aria-labelledby="h-2023">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-2023">2023</h2></div>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Dec 2023 · Project report</span><span data-l="de">Dez. 2023 · Projektbericht</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.5281/zenodo.11443093" rel="noopener"><span data-l="en">Key performance indicators for thermal storage systems</span><span data-l="de">Kennzahlen für thermische Speichersysteme</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">The key energetic, environmental and economic KPIs used to evaluate the storage systems in the BEST-Storage project.</p>
+          <p data-l="de">Die energetischen, ökologischen und ökonomischen Kennzahlen, mit denen im Projekt BEST-Storage die Speichersysteme bewertet werden.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Sep 2023 · Project reports</span><span data-l="de">Sep. 2023 · Projektberichte</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.5281/zenodo.11442891" rel="noopener"><span data-l="en">Storage configurations and markets across Europe</span><span data-l="de">Speicherkonfigurationen und Märkte in Europa</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Two BEST-Storage deliverables: promising storage and system configurations for all European regions, and an <a href="https://doi.org/10.5281/zenodo.11394681" rel="noopener">overview of current and future markets</a>.</p>
+          <p data-l="de">Zwei Projektberichte aus BEST-Storage: vielversprechende Speicher- und Systemkonfigurationen für alle Regionen Europas und ein <a href="https://doi.org/10.5281/zenodo.11394681" rel="noopener">Überblick über heutige und künftige Märkte</a>.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">2023 · Project report</span><span data-l="de">2023 · Projektbericht</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.24406/publica-2606" rel="noopener"><span data-l="en">IntegraNet II: integrated electricity, gas and heat systems</span><span data-l="de">IntegraNet II: Strom-, Gas- und Wärmesysteme integriert betrachtet</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Final report of the IntegraNet II research project at Fraunhofer UMSICHT (in German).</p>
+          <p data-l="de">Abschlussbericht des Forschungsvorhabens IntegraNet II am Fraunhofer UMSICHT.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="block" aria-labelledby="h-2022">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-2022">2022</h2></div>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Dec 2022 · Paper</span><span data-l="de">Dez. 2022 · Artikel</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.1145/3564625.3568136" rel="noopener"><span data-l="en">Vehicle-to-grid: local power grids at risk?</span><span data-l="de">Vehicle-to-Grid: lokale Stromnetze in Gefahr?</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Open-access paper at ACSAC 2022: experiments and simulations of attacks on the charging communication of electric vehicles, and what they could mean for local power grids.</p>
+          <p data-l="de">Open-Access-Beitrag auf der ACSAC 2022: Experimente und Simulationen zu Angriffen auf die Ladekommunikation von Elektrofahrzeugen und ihre möglichen Folgen für lokale Stromnetze.</p>
+        </div>
+      </article>
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Nov 2022 · Thesis</span><span data-l="de">Nov. 2022 · Abschlussarbeit</span></p>
+        <div>
+          <h3><a href="https://doi.org/10.24406/publica-498" rel="noopener"><span data-l="en">Master’s thesis: planning heat-network-based urban energy systems</span><span data-l="de">Masterarbeit: Planung wärmenetzbasierter urbaner Energiesysteme</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">An integrated method and open-source toolbox for planning and simulating urban energy systems with heat networks, based on 282 tools collected in a systematic literature review (RWTH Aachen University, in German).</p>
+          <p data-l="de">Eine integrierte Methode und eine Toolbox aus Open-Source-Werkzeugen für die Planung und Simulation urbaner Energiesysteme mit Wärmenetzen, aufbauend auf 282 Tools aus einer systematischen Literaturrecherche (RWTH Aachen).</p>
         </div>
       </article>
     </div>
@@ -111,7 +219,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Dorian Höffner</span>
-    <span><a href="../legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, no tracking</span><span data-l="de">Keine Cookies, kein Tracking</span></span>
+    <span><a href="../legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, anonymous visitor count</span><span data-l="de">Keine Cookies, anonyme Besucherzählung</span></span>
   </div>
 </footer>
 </body>

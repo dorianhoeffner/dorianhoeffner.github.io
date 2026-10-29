@@ -15,7 +15,6 @@
   langBtns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); }); });
   setLang(d.getAttribute('data-lang') || 'en', false);
 
-  /* Theme */
   /* Theme: light by default, the switch turns dark mode on and off (remembered in dh-theme). */
   var switches = document.querySelectorAll('.theme-switch');
   function setTheme(t, save) {
@@ -27,6 +26,10 @@
     s.addEventListener('click', function () { setTheme(d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true); });
   });
   setTheme(d.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
+  /* Keep every open page of the site in step: a switch in one tab, or coming back with the back button, applies the current choice. */
+  function syncTheme() { var t = null; try { t = localStorage.getItem('dh-theme'); } catch (e) {} setTheme(t === 'dark' ? 'dark' : 'light', false); }
+  window.addEventListener('storage', function (e) { if (!e.key || e.key === 'dh-theme') syncTheme(); });
+  window.addEventListener('pageshow', function (e) { if (e.persisted) syncTheme(); });
 
   /* Mobile menu */
   var header = document.querySelector('.site-header');

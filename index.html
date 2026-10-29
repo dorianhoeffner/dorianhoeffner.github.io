@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en" data-lang="en" data-title-en="Dorian Höffner · Tools, publications and notes on thermal energy storage" data-title-de="Dorian Höffner · Werkzeuge, Publikationen und Notizen zu thermischen Energiespeichern">
+<html lang="en" data-lang="en" data-title-en="Dorian Höffner · Research blog on thermal energy storage and absorption thermal batteries" data-title-de="Dorian Höffner · Forschungsblog zu thermischen Energiespeichern und Absorptionswärmespeichern">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dorian Höffner · Tools, publications and notes on thermal energy storage</title>
-<meta name="description" content="Open tools, publications and notes from research on thermal energy storage and heat supply at TU Berlin: Absorption Atlas, Refrigerant Atlas, absorptionlib.">
+<title>Dorian Höffner · Research blog on thermal energy storage and absorption thermal batteries</title>
+<meta name="description" content="Research blog of Dorian Höffner, TU Berlin: interactive tools and publications on thermal energy storage, absorption thermal batteries (ATB), heat pumps and energy systems. Absorption Atlas, Refrigerant Atlas, absorptionlib.">
+<meta name="keywords" content="absorption thermal battery, ATB, absorption thermal energy storage, thermochemical energy storage, sorption heat storage, seasonal heat storage, thermal energy storage, NaOH, sodium hydroxide, LiBr, LiCl, CaCl2, salt solutions, heat pump, refrigerants, district heating, energy system planning, sector coupling, TU Berlin, Absorptionswärmespeicher, thermische Energiespeicher, Wärmepumpe">
 <meta name="author" content="Dorian Höffner">
 <link rel="canonical" href="https://dorianhoeffner.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tools, publications and notes on thermal energy storage">
-<meta property="og:description" content="Open tools and research notes on thermal energy storage and heat supply, by Dorian Höffner, TU Berlin.">
+<meta property="og:title" content="Dorian Höffner · Research blog">
+<meta property="og:description" content="Interactive tools and publications on thermal energy storage and absorption thermal batteries, by Dorian Höffner, TU Berlin.">
 <meta property="og:url" content="https://dorianhoeffner.com/">
 <meta property="og:image" content="https://dorianhoeffner.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -30,11 +31,11 @@
   "affiliation": {
     "@type": "CollegeOrUniversity",
     "name": "Technische Universität Berlin",
-    "department": "Chair of Heat Transfer and Conversion, Institute of Energy Engineering",
+    "department": "Chair of Heat Transfer and Conversion, Institute for Energy Engineering",
     "url": "https://www.tu.berlin/"
   },
-  "knowsAbout": ["Energy storage", "Thermal energy storage", "Thermal energy systems", "Sector coupling", "Life cycle assessment", "Absorption thermal energy storage", "Heat and mass transfer"],
-  "sameAs": ["https://github.com/dorianhoeffner", "https://pypi.org/project/absorptionlib/"]
+  "knowsAbout": ["Energy storage", "Thermal energy storage", "Absorption thermal battery", "Absorption thermal energy storage", "Thermochemical energy storage", "Seasonal heat storage", "Heat pumps", "Refrigerants", "Thermal energy systems", "District heating", "Energy system planning", "Sector coupling", "Life cycle assessment", "Heat and mass transfer"],
+  "sameAs": ["https://www.linkedin.com/in/dorianhoeffner", "https://github.com/dorianhoeffner", "https://pypi.org/project/absorptionlib/"]
 }
 </script>
 <script>
@@ -48,6 +49,7 @@
 })();
 </script>
 <script src="site.js" defer></script>
+<script src="/count.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="de">Zum Inhalt</span></a>
@@ -59,14 +61,13 @@
       <span class="avatar" aria-hidden="true"></span>
       <span class="ident-text">
         <span class="ident-name">Dorian Höffner</span>
-        <span class="ident-sub"><span data-l="en">Thermal energy storage</span><span data-l="de">Thermische Energiespeicher</span>&nbsp;· TU Berlin</span>
+        <span class="ident-sub"><span data-l="en">Research Blog</span><span data-l="de">Forschungsblog</span>&nbsp;· TU Berlin</span>
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#tools"><span data-l="en">Tools</span><span data-l="de">Werkzeuge</span></a>
+      <a href="#tools"><span data-l="en">Tools</span><span data-l="de">Tools</span></a>
       <a href="#publications"><span data-l="en">Publications</span><span data-l="de">Publikationen</span></a>
-      <a href="#notes"><span data-l="en">Notes</span><span data-l="de">Notizen</span></a>
-      <a href="#about"><span data-l="en">About</span><span data-l="de">Über mich</span></a>
+      <a href="#notes"><span data-l="en">Blog &amp; Updates</span><span data-l="de">Blog &amp; Updates</span></a>
       <div class="nav-controls">
         <div class="seg" role="group" aria-label="Language / Sprache">
           <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
@@ -95,8 +96,13 @@
   <section class="intro">
     <div class="wrap">
       <h1 class="sr-only">Dorian Höffner</h1>
-      <p class="lede" data-l="en">Open tools, publications and notes from research on thermal energy storage and heat supply: absorption storage, heat and mass transfer, and life cycle assessment.</p>
-      <p class="lede" data-l="de">Offene Werkzeuge, Publikationen und Notizen aus der Forschung zu thermischen Energiespeichern und Wärmeversorgung: Absorptionsspeicher, Wärme- und Stoffübertragung und Ökobilanzierung.</p>
+      <p class="lede" data-l="en">I am a doctoral researcher at TU Berlin’s Institute for Energy Engineering, working on thermal energy storage, in particular absorption thermal batteries. I use this website to make my research more accessible and to provide interactive tools for exploring my research results. Questions about the tools or ideas for collaboration are welcome.</p>
+      <p class="lede" data-l="de">Ich bin Doktorand am Institut für Energietechnik der TU Berlin und forsche zu thermischen Energiespeichern, insbesondere zu Absorptionswärmespeichern (Absorption Thermal Batteries). Auf dieser Website mache ich meine Forschung zugänglicher und stelle interaktive Tools bereit, mit denen sich meine Ergebnisse erkunden lassen. Fragen zu den Tools oder Ideen für eine Zusammenarbeit sind willkommen.</p>
+      <p class="contact">
+        <a href="mailto:dorian.hoeffner@tu-berlin.de">dorian.hoeffner@tu-berlin.de</a>
+        <a href="https://www.linkedin.com/in/dorianhoeffner" rel="me noopener">LinkedIn</a>
+        <a href="https://github.com/dorianhoeffner" rel="me noopener">GitHub</a>
+      </p>
     </div>
   </section>
 
@@ -104,7 +110,7 @@
   <section class="block" id="tools" aria-labelledby="h-tools">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="h-tools"><span data-l="en">Tools</span><span data-l="de">Werkzeuge</span></h2>
+        <h2 id="h-tools"><span data-l="en">Tools</span><span data-l="de">Tools</span></h2>
         <span class="aside"><span data-l="en">Free to use, no account needed</span><span data-l="de">Frei nutzbar, ohne Konto</span></span>
       </div>
 
@@ -117,17 +123,17 @@
             <span class="kind"><span data-l="en">Web app</span><span data-l="de">Web-App</span></span>
           </div>
           <h3><a href="/absorptionlib/">Absorption Atlas</a></h3>
-          <p class="desc" data-l="en">Thermophysical properties and storage-cycle analysis for aqueous salt solutions.</p>
-          <p class="desc" data-l="de">Stoffwerte und Speicherzyklus-Analyse für wässrige Salzlösungen.</p>
+          <p class="desc" data-l="en">How much heat an absorption thermal battery can store, and the properties of the salt solutions behind it.</p>
+          <p class="desc" data-l="de">Wie viel Wärme ein Absorptionswärmespeicher speichern kann, und die Stoffwerte der Salzlösungen dahinter.</p>
           <ul data-l="en">
+            <li>Storage density of four storage processes</li>
             <li>p–T and property diagrams for NaOH, LiBr, LiCl, CaCl₂</li>
             <li>Property calculator with Python snippets</li>
-            <li>Energy density of four storage processes</li>
           </ul>
           <ul data-l="de">
+            <li>Speicherdichte von vier Speicherprozessen</li>
             <li>p–T- und Zustandsdiagramme für NaOH, LiBr, LiCl, CaCl₂</li>
             <li>Stoffwertrechner mit Python-Codebeispielen</li>
-            <li>Energiedichte von vier Speicherprozessen</li>
           </ul>
           <p class="tool-links">
             <a class="go" href="/absorptionlib/"><span data-l="en">Open</span><span data-l="de">Öffnen</span> →</a>
@@ -205,41 +211,41 @@
           <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1016/j.enconman.2026.121845" rel="noopener">DOI ↗</a></div>
         </li>
         <li class="pub">
-          <span class="yr">2025</span>
+          <span class="yr">2024</span>
           <div>
-            <p class="t"><a href="https://doi.org/10.18462/iir.tptpr2025.1130" rel="noopener">Potentials of absorption thermal energy storage systems in seasonal application</a></p>
-            <p class="meta"><b>Höffner</b>, Ziegler, Elbel · <span data-l="en">IIR conference</span><span data-l="de">IIR-Konferenz</span> TPTPR 2025</p>
+            <p class="t"><a href="https://doi.org/10.1016/j.energy.2024.132542" rel="noopener">Energy system planning and analysis software – A comprehensive meta-review with special attention to urban energy systems and district heating</a></p>
+            <p class="meta"><b>Höffner</b>, Glombik · <i>Energy</i> 307, 132542</p>
           </div>
-          <div class="side"><span class="badge"><span data-l="en">Conference</span><span data-l="de">Konferenz</span></span><a href="https://doi.org/10.18462/iir.tptpr2025.1130" rel="noopener">DOI ↗</a></div>
+          <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1016/j.energy.2024.132542" rel="noopener">DOI ↗</a></div>
         </li>
         <li class="pub">
-          <span class="yr">2025</span>
+          <span class="yr">2022</span>
           <div>
-            <p class="t"><a href="https://zenodo.org/records/17310538" rel="noopener">Steady-state model for closed-sorption thermochemical heat storage systems</a></p>
-            <p class="meta"><b>Höffner</b>, Thiele, Knorre, Meyer · Zenodo</p>
+            <p class="t"><a href="https://doi.org/10.1145/3564625.3568136" rel="noopener">Local power grids at risk – An experimental and simulation-based analysis of attacks on vehicle-to-grid communication</a></p>
+            <p class="meta">Zhdanova, Urbansky, Hagemeier, Zelle, Herrmann, <b>Höffner</b> · <span data-l="en">Proc. 38th Annual Computer Security Applications Conference (ACSAC)</span><span data-l="de">Tagungsband 38th Annual Computer Security Applications Conference (ACSAC)</span>, 42–55</p>
           </div>
-          <div class="side"><span class="badge"><span data-l="en">Model</span><span data-l="de">Modell</span></span><a href="https://zenodo.org/records/17310538" rel="noopener">Record ↗</a></div>
+          <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1145/3564625.3568136" rel="noopener">DOI ↗</a></div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- ======================= NOTES (latest; the full list is notes/index.html) ======================= -->
+  <!-- ======================= BLOG & UPDATES (latest; the full list is notes/index.html) ======================= -->
   <section class="block" id="notes" aria-labelledby="h-notes">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="h-notes"><span data-l="en">Notes</span><span data-l="de">Notizen</span></h2>
-        <a class="more" href="notes/"><span data-l="en">All notes</span><span data-l="de">Alle Notizen</span> →</a>
+        <h2 id="h-notes"><span data-l="en">Blog &amp; Updates</span><span data-l="de">Blog &amp; Updates</span></h2>
+        <a class="more" href="notes/"><span data-l="en">All entries since 2022</span><span data-l="de">Alle Einträge seit 2022</span> →</a>
       </div>
 
       <!-- Latest note with a figure (optional). Older notes below as short rows. -->
       <article class="note-feature">
         <div>
-          <p class="note-meta"><span data-l="en">Oct 2026 · Tool update</span><span data-l="de">Okt. 2026 · Werkzeug-Update</span></p>
+          <p class="note-meta"><span data-l="en">Oct 2026 · Tool update</span><span data-l="de">Okt. 2026 · Tool-Update</span></p>
           <h3><a href="notes/2026-10-absorption-atlas-processes/"><span data-l="en">The Absorption Atlas now covers double-stage and crystallisation processes</span><span data-l="de">Der Absorption Atlas rechnet jetzt auch zweistufige Prozesse und Kristallisation</span></a></h3>
           <p data-l="en">The storage-cycle module now computes all four processes from our paper in Energy Conversion and Management: single- and double-stage discharge, each with and without crystallisation.</p>
           <p data-l="de">Das Speicherzyklus-Modul rechnet jetzt alle vier Prozesse aus unserem Artikel in Energy Conversion and Management: ein- und zweistufige Entladung, jeweils mit und ohne Kristallisation.</p>
-          <a class="more" href="notes/2026-10-absorption-atlas-processes/"><span data-l="en">Read the note</span><span data-l="de">Zur Notiz</span> →</a>
+          <a class="more" href="notes/2026-10-absorption-atlas-processes/"><span data-l="en">Read more</span><span data-l="de">Weiterlesen</span> →</a>
         </div>
         <figure class="plot">
 <svg viewBox="0 0 320 200" role="img" aria-label="Energy storage density of NaOH–water over temperature lift for four storage processes (Höffner, Ziegler and Elbel 2026, Fig. 7)">
@@ -263,7 +269,15 @@
         </figure>
       </article>
 
-      <!-- A note can link to its own page in notes/ or straight to an external page (mark those with <span class="ext">↗</span>). -->
+      <!-- An entry can link to its own page in notes/ or straight to an external page (mark those with <span class="ext">↗</span>). -->
+      <article class="note-row">
+        <p class="note-meta"><span data-l="en">Oct 2026 · New tool</span><span data-l="de">Okt. 2026 · Neues Tool</span></p>
+        <div>
+          <h3><a href="refrigerant-atlas/"><span data-l="en">Refrigerant Atlas: cycles and diagrams for 26 refrigerants</span><span data-l="de">Kältemittel-Atlas: Kreisprozesse und Diagramme für 26 Kältemittel</span></a></h3>
+          <p data-l="en">Log p–h diagrams, refrigeration and heat pump cycles and fact sheets, computed in your browser with data from CoolProp.</p>
+          <p data-l="de">log p–h-Diagramme, Kälte- und Wärmepumpenkreisläufe und Steckbriefe, berechnet in Ihrem Browser mit Daten aus CoolProp.</p>
+        </div>
+      </article>
       <article class="note-row">
         <p class="note-meta"><span data-l="en">Oct 2026 · Software</span><span data-l="de">Okt. 2026 · Software</span></p>
         <div>
@@ -273,35 +287,22 @@
         </div>
       </article>
       <article class="note-row">
-        <p class="note-meta"><span data-l="en">Oct 2026 · New tool</span><span data-l="de">Okt. 2026 · Neues Werkzeug</span></p>
+        <p class="note-meta"><span data-l="en">Jul 2026 · Paper</span><span data-l="de">Juli 2026 · Artikel</span></p>
         <div>
-          <h3><a href="refrigerant-atlas/"><span data-l="en">Refrigerant Atlas: cycles and diagrams for 26 refrigerants</span><span data-l="de">Kältemittel-Atlas: Kreisprozesse und Diagramme für 26 Kältemittel</span></a></h3>
-          <p data-l="en">Log p–h diagrams, refrigeration and heat pump cycles and fact sheets, computed in your browser with data from CoolProp.</p>
-          <p data-l="de">log p–h-Diagramme, Kälte- und Wärmepumpenkreisläufe und Steckbriefe, berechnet in Ihrem Browser mit Daten aus CoolProp.</p>
+          <h3><a href="https://doi.org/10.1016/j.enconman.2026.121845" rel="noopener"><span data-l="en">How much heat can an absorption thermal battery store?</span><span data-l="de">Wie viel Wärme speichert ein Absorptionswärmespeicher?</span> <span class="ext">↗</span></a></h3>
+          <p data-l="en">Open-access paper in Energy Conversion and Management: storage density of four processes under different boundary conditions, for NaOH, LiBr, LiCl and CaCl₂ solutions. The results can be explored in the Absorption Atlas.</p>
+          <p data-l="de">Open-Access-Artikel in Energy Conversion and Management: Speicherdichte von vier Prozessen unter verschiedenen Randbedingungen, für NaOH-, LiBr-, LiCl- und CaCl₂-Lösungen. Die Ergebnisse lassen sich im Absorption Atlas erkunden.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ======================= ABOUT ======================= -->
-  <section id="about" aria-labelledby="h-about">
-    <div class="wrap about">
-      <h2 id="h-about" class="sr-only"><span data-l="en">About</span><span data-l="de">Über mich</span></h2>
-      <p class="text" data-l="en">I'm a doctoral researcher at the Chair of Heat Transfer and Conversion at TU Berlin. Questions about the tools or ideas for collaboration are welcome.</p>
-      <p class="text" data-l="de">Ich bin Doktorand am Fachgebiet Wärmeübertragung und -wandlung der TU Berlin. Fragen zu den Werkzeugen oder Ideen für Kooperationen sind willkommen.</p>
-      <!-- Add later, same pattern: ORCID, Google Scholar, LinkedIn, CV (PDF) -->
-      <p class="contact">
-        <a href="mailto:dorian.hoeffner@tu-berlin.de">dorian.hoeffner@tu-berlin.de</a>
-        <a href="https://github.com/dorianhoeffner" rel="me noopener">GitHub</a>
-      </p>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Dorian Höffner</span>
-    <span><a href="legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, no tracking</span><span data-l="de">Keine Cookies, kein Tracking</span></span>
+    <span><a href="legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, anonymous visitor count</span><span data-l="de">Keine Cookies, anonyme Besucherzählung</span></span>
   </div>
 </footer>
 </body>

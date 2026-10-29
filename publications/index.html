@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Publications · Dorian Höffner</title>
-<meta name="description" content="All publications by Dorian Höffner (TU Berlin) on absorption thermal energy storage, heat and mass transfer and life cycle assessment.">
+<meta name="description" content="All publications by Dorian Höffner (TU Berlin) on absorption thermal batteries, thermochemical and seasonal heat storage, energy system planning software and vehicle-to-grid.">
 <meta name="author" content="Dorian Höffner">
 <link rel="canonical" href="https://dorianhoeffner.com/publications/">
 <meta property="og:type" content="website">
@@ -25,6 +25,7 @@
 })();
 </script>
 <script src="../site.js" defer></script>
+<script src="/count.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="de">Zum Inhalt</span></a>
@@ -35,14 +36,13 @@
       <span class="avatar" aria-hidden="true"></span>
       <span class="ident-text">
         <span class="ident-name">Dorian Höffner</span>
-        <span class="ident-sub"><span data-l="en">Thermal energy storage</span><span data-l="de">Thermische Energiespeicher</span>&nbsp;· TU Berlin</span>
+        <span class="ident-sub"><span data-l="en">Research Blog</span><span data-l="de">Forschungsblog</span>&nbsp;· TU Berlin</span>
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="../#tools"><span data-l="en">Tools</span><span data-l="de">Werkzeuge</span></a>
+      <a href="../#tools"><span data-l="en">Tools</span><span data-l="de">Tools</span></a>
       <a href="./" aria-current="page"><span data-l="en">Publications</span><span data-l="de">Publikationen</span></a>
-      <a href="../notes/"><span data-l="en">Notes</span><span data-l="de">Notizen</span></a>
-      <a href="../#about"><span data-l="en">About</span><span data-l="de">Über mich</span></a>
+      <a href="../notes/"><span data-l="en">Blog &amp; Updates</span><span data-l="de">Blog &amp; Updates</span></a>
       <div class="nav-controls">
         <div class="seg" role="group" aria-label="Language / Sprache">
           <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
@@ -69,15 +69,17 @@
 
 <main id="main">
   <div class="wrap page-head">
+    <a class="back" href="../">← <span data-l="en">Home page</span><span data-l="de">Startseite</span></a>
     <h1><span data-l="en">Publications</span><span data-l="de">Publikationen</span></h1>
-    <p data-l="en">All publications, newest first within each group. Titles link to the publisher's version.</p>
-    <p data-l="de">Alle Publikationen, innerhalb jeder Gruppe die neuesten zuerst. Die Titel führen zur Verlagsversion.</p>
+    <p data-l="en">All publications, newest first within each group. Every title links to the publication.</p>
+    <p data-l="de">Alle Publikationen, innerhalb jeder Gruppe die neuesten zuerst. Jeder Titel führt zur Publikation.</p>
     <!-- Add later: <p>Also on <a href="https://orcid.org/…">ORCID</a> and <a href="https://scholar.google.com/…">Google Scholar</a>.</p> -->
   </div>
 
   <!-- Each group is one <section class="block pub-group">. Copy a <li class="pub"> block per entry, newest first.
+       Every title and the link on the right point to the publication (DOI, Zenodo, PyPI, ...).
        Badges: <span class="badge oa">Open access</span>, or a plain <span class="badge">…</span> for the type.
-       Remove a group if it is empty; uncomment the prepared groups at the end when you have entries. -->
+       A group for talks and posters is prepared at the end of the file (commented out). -->
 
   <section class="block pub-group" aria-labelledby="h-journal">
     <div class="wrap">
@@ -91,10 +93,17 @@
           </div>
           <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1016/j.enconman.2026.121845" rel="noopener">DOI ↗</a></div>
         </li>
+        <li class="pub">
+          <span class="yr">2024</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.1016/j.energy.2024.132542" rel="noopener">Energy system planning and analysis software – A comprehensive meta-review with special attention to urban energy systems and district heating</a></p>
+            <p class="meta"><b>Höffner</b>, Glombik · <i>Energy</i> 307, 132542</p>
+          </div>
+          <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1016/j.energy.2024.132542" rel="noopener">DOI ↗</a></div>
+        </li>
       </ol>
     </div>
   </section>
-
   <section class="block pub-group" aria-labelledby="h-conf">
     <div class="wrap">
       <div class="sec-head"><h2 id="h-conf"><span data-l="en">Conference papers</span><span data-l="de">Konferenzbeiträge</span></h2></div>
@@ -107,27 +116,104 @@
           </div>
           <div class="side"><span class="badge"><span data-l="en">Conference</span><span data-l="de">Konferenz</span></span><a href="https://doi.org/10.18462/iir.tptpr2025.1130" rel="noopener">DOI ↗</a></div>
         </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="block pub-group" aria-labelledby="h-data">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-data"><span data-l="en">Data, models and software</span><span data-l="de">Daten, Modelle und Software</span></h2></div>
-      <ol class="pubs">
         <li class="pub">
           <span class="yr">2025</span>
           <div>
-            <p class="t"><a href="https://zenodo.org/records/17310538" rel="noopener">Steady-state model for closed-sorption thermochemical heat storage systems</a></p>
+            <p class="t"><a href="https://doi.org/10.5281/zenodo.17310538" rel="noopener">Steady-state model for closed-sorption thermochemical heat storage systems</a></p>
             <p class="meta"><b>Höffner</b>, Thiele, Knorre, Meyer · Zenodo</p>
           </div>
-          <div class="side"><span class="badge"><span data-l="en">Model</span><span data-l="de">Modell</span></span><a href="https://zenodo.org/records/17310538" rel="noopener">Record ↗</a></div>
+          <div class="side"><span class="badge"><span data-l="en">Conference</span><span data-l="de">Konferenz</span></span><a href="https://doi.org/10.5281/zenodo.17310538" rel="noopener">Zenodo ↗</a></div>
+        </li>
+        <li class="pub">
+          <span class="yr">2022</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.1145/3564625.3568136" rel="noopener">Local power grids at risk – An experimental and simulation-based analysis of attacks on vehicle-to-grid communication</a></p>
+            <p class="meta">Zhdanova, Urbansky, Hagemeier, Zelle, Herrmann, <b>Höffner</b> · <span data-l="en">Proc. 38th Annual Computer Security Applications Conference (ACSAC)</span><span data-l="de">Tagungsband 38th Annual Computer Security Applications Conference (ACSAC)</span>, 42–55</p>
+          </div>
+          <div class="side"><span class="badge oa">Open access</span><a href="https://doi.org/10.1145/3564625.3568136" rel="noopener">DOI ↗</a></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="block pub-group" aria-labelledby="h-reports">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-reports"><span data-l="en">Reports and project deliverables</span><span data-l="de">Berichte und Projektberichte</span></h2></div>
+      <ol class="pubs">
+        <li class="pub">
+          <span class="yr">2024</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.5281/zenodo.17276813" rel="noopener">First version of simulation model of the thermo-chemical storage system</a></p>
+            <p class="meta"><b>Höffner</b>, Gharaee, Knorre · <span data-l="en">BEST-Storage project deliverable</span><span data-l="de">Projektbericht BEST-Storage</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Report</span><span data-l="de">Bericht</span></span><a href="https://doi.org/10.5281/zenodo.17276813" rel="noopener">Zenodo ↗</a></div>
+        </li>
+        <li class="pub">
+          <span class="yr">2023</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.5281/zenodo.11443093" rel="noopener">Identification of the key energetic, environmental, and economic KPIs</a></p>
+            <p class="meta"><b>Höffner</b>, Carbonell, Grasset · <span data-l="en">BEST-Storage project deliverable</span><span data-l="de">Projektbericht BEST-Storage</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Report</span><span data-l="de">Bericht</span></span><a href="https://doi.org/10.5281/zenodo.11443093" rel="noopener">Zenodo ↗</a></div>
+        </li>
+        <li class="pub">
+          <span class="yr">2023</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.5281/zenodo.11442891" rel="noopener">Promising storage and system configurations and geographical cluster</a></p>
+            <p class="meta"><b>Höffner</b>, Thiele, Knorre, Bereciartua, Corrales et al. · <span data-l="en">BEST-Storage project deliverable</span><span data-l="de">Projektbericht BEST-Storage</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Report</span><span data-l="de">Bericht</span></span><a href="https://doi.org/10.5281/zenodo.11442891" rel="noopener">Zenodo ↗</a></div>
+        </li>
+        <li class="pub">
+          <span class="yr">2023</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.5281/zenodo.11394681" rel="noopener">Current and future overview of technical market application</a></p>
+            <p class="meta">Knorre, <b>Höffner</b>, Thiele, Bereciartua, Corrales et al. · <span data-l="en">BEST-Storage project deliverable</span><span data-l="de">Projektbericht BEST-Storage</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Report</span><span data-l="de">Bericht</span></span><a href="https://doi.org/10.5281/zenodo.11394681" rel="noopener">Zenodo ↗</a></div>
+        </li>
+        <li class="pub">
+          <span class="yr">2023</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.24406/publica-2606" rel="noopener">IntegraNet II – Kontextbezogene Potenzialanalysen, Einbindung der IKT-Ebene und Untersuchung erweiterter Fragestellungen bei der integrierten Betrachtung von Strom-, Gas- und Wärmesystemen</a></p>
+            <p class="meta">Benthin, Hagemeier, Heyer, <b>Höffner</b>, Huismann, Ruppert, Stienecker, Urbansky, Wolf, Bruns · <span data-l="en">Final project report, Fraunhofer UMSICHT (in German)</span><span data-l="de">Abschlussbericht, Fraunhofer UMSICHT</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Report</span><span data-l="de">Bericht</span></span><a href="https://doi.org/10.24406/publica-2606" rel="noopener">Fraunhofer ↗</a></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="block pub-group" aria-labelledby="h-data">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-data"><span data-l="en">Software</span><span data-l="de">Software</span></h2></div>
+      <ol class="pubs">
+        <li class="pub">
+          <span class="yr">2024</span>
+          <div>
+            <p class="t"><a href="https://pypi.org/project/absorptionlib/" rel="noopener">absorptionlib: thermophysical properties of aqueous salt solutions for absorption storage</a></p>
+            <p class="meta"><b>Höffner</b> · <span data-l="en">Python package, first release 2024, current version 1.1.0</span><span data-l="de">Python-Paket, erste Version 2024, aktuell 1.1.0</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Software</span><span data-l="de">Software</span></span><a href="https://pypi.org/project/absorptionlib/" rel="noopener">PyPI ↗</a></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="block pub-group" aria-labelledby="h-theses">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-theses"><span data-l="en">Theses</span><span data-l="de">Abschlussarbeiten</span></h2></div>
+      <ol class="pubs">
+        <li class="pub">
+          <span class="yr">2022</span>
+          <div>
+            <p class="t"><a href="https://doi.org/10.24406/publica-498" rel="noopener">Entwicklung einer integrierten Methode zur Planung und Simulation wärmenetzbasierter, urbaner Energiesysteme im Kontext von Energiewende und Sektorenkopplung</a></p>
+            <p class="meta"><b>Höffner</b> · <span data-l="en">M.Sc. thesis, RWTH Aachen University (in German)</span><span data-l="de">Masterarbeit, RWTH Aachen</span></p>
+          </div>
+          <div class="side"><span class="badge"><span data-l="en">Thesis</span><span data-l="de">Abschlussarbeit</span></span><a href="https://doi.org/10.24406/publica-498" rel="noopener">Fraunhofer ↗</a></div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- Prepared groups, uncomment when needed:
+  <!-- Prepared group, uncomment when needed:
 
   <section class="block pub-group" aria-labelledby="h-talks">
     <div class="wrap">
@@ -136,26 +222,10 @@
         <li class="pub">
           <span class="yr">20XX</span>
           <div>
-            <p class="t">Title of the talk</p>
+            <p class="t"><a href="slides.pdf">Title of the talk</a></p>
             <p class="meta"><b>Höffner</b> · Conference, City</p>
           </div>
           <div class="side"><span class="badge"><span data-l="en">Talk</span><span data-l="de">Vortrag</span></span><a href="slides.pdf">Slides ↗</a></div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="block pub-group" aria-labelledby="h-theses">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-theses"><span data-l="en">Theses</span><span data-l="de">Abschlussarbeiten</span></h2></div>
-      <ol class="pubs">
-        <li class="pub">
-          <span class="yr">20XX</span>
-          <div>
-            <p class="t">Title of the thesis</p>
-            <p class="meta">M.Sc. thesis, University</p>
-          </div>
-          <div class="side"></div>
         </li>
       </ol>
     </div>
@@ -166,7 +236,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Dorian Höffner</span>
-    <span><a href="../legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, no tracking</span><span data-l="de">Keine Cookies, kein Tracking</span></span>
+    <span><a href="../legal.html"><span data-l="en">Legal notice and privacy</span><span data-l="de">Impressum und Datenschutz</span></a> · <span data-l="en">No cookies, anonymous visitor count</span><span data-l="de">Keine Cookies, anonyme Besucherzählung</span></span>
   </div>
 </footer>
 </body>

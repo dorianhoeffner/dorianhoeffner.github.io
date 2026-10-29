@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<script>/* Light by default; dark only when chosen with the switch on dorianhoeffner.com (dh-theme). */(function(){var t="light";try{if(localStorage.getItem("dh-theme")==="dark")t="dark";}catch(e){}document.documentElement.setAttribute("data-theme",t);})();</script>
+<script>/* Light by default; dark only when chosen with the switch on dorianhoeffner.com (dh-theme, local storage, no cookie). Follows a change made in another tab and on return via the back button. */(function(){function a(){var t="light";try{if(localStorage.getItem("dh-theme")==="dark")t="dark";}catch(e){}document.documentElement.setAttribute("data-theme",t);}a();addEventListener("storage",function(e){if(!e.key||e.key==="dh-theme")a();});addEventListener("pageshow",function(e){if(e.persisted)a();});})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Refrigerant Atlas · Kältemittel-Atlas</title>
 <meta name="description" content="Interactive refrigeration and heat pump cycles, log p–h, T–s, p–T and T–Q diagrams, comparisons and fact sheets for 26 refrigerants, from natural fluids to HFOs and zeotropic blends. Property data from CoolProp reference equations of state.">
@@ -14,6 +14,7 @@
 <meta property="og:url" content="https://dorianhoeffner.com/refrigerant-atlas/">
 <meta property="og:image" content="https://dorianhoeffner.com/og.png">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script src="/count.js" defer></script>
 <link rel="stylesheet" href="../fonts.css">
 <style>
 .byline .home-link { text-decoration: none; color: var(--ink-2); }
@@ -2151,7 +2152,7 @@ window.KDATA = {"R744":{"meta":{"M":0.0440098,"Tc":304.1282,"pc":7377298.3734467
     factsTitle: 'Kältemittel-Steckbriefe', factsSub: 'Eigenschaften, Besonderheiten, Regulierung',
     copied: 'In die Zwischenablage kopiert', copyFail: 'Kopieren nicht möglich – Tabelle ist markiert', saved: 'Gespeichert', saveFail: 'Speichern ist hier nicht möglich', saveBusy: 'Ein Speicherdialog ist bereits offen', saveAs: 'Speichern als',
     errTlow: 'Verdampfung unterhalb des Gültigkeitsbereichs (min. {T} °C)', errT0crit: 'Verdampfungstemperatur zu nah am kritischen Punkt', errLift: 'Verflüssigung muss mindestens 3 K über der Verdampfung liegen', errTrans: 'Transkritischer Betrieb nicht tabelliert', errCalc: 'Berechnung nicht möglich', errQ0: 'Kein Kälteeffekt: Gaskühleraustritt zu warm für dieses Kältemittel', errRange: 'Zustand außerhalb des tabellierten Bereichs', errSupercrit: 'Temperatur oberhalb der kritischen Temperatur',
-    pre_fridge: 'Kühlschrank', pre_nk: 'Normalkühlung', pre_tk: 'Tiefkühlung', pre_ac: 'Klimaanlage', pre_chiller: 'Kaltwassersatz', pre_mac: 'Pkw-Klima', pre_hpnew: 'WP Neubau', pre_hpold: 'WP Altbau', pre_hthp: 'Hochtemperatur-WP',
+    pre_fridge: 'Kühlschrank', pre_nk: 'Normalkühlung', pre_tk: 'Tiefkühlung', pre_ac: 'Klimaanlage', pre_chiller: 'Kaltwassersatz', pre_mac: 'Pkw-Klima', pre_hpnew: 'Wärmepumpe Neubau', pre_hpold: 'Wärmepumpe Altbau', pre_hthp: 'Hochtemperatur-Wärmepumpe',
     gPreset: 'Anwendung', gOp: 'Betriebspunkt', lT0: 'Verdampfung', lTc: 'Verflüssigung', lTgc: 'Gaskühler-Austritt', lSh: 'Überhitzung', lSc: 'Unterkühlung',
     gTrans: 'Hochdruck', gTransSub: 'transkritisch', pHiAuto: 'COP-optimal', pHiMan: 'manuell', lPhi: 'Gaskühlerdruck', pHiOpt: 'Optimaler Hochdruck für {f}: {p} bar',
     gComp: 'Verdichter und IWT', lEta: 'Isentroper Wirkungsgrad', lIhx: 'Interner Wärmeübertrager',
@@ -2209,7 +2210,7 @@ window.KDATA = {"R744":{"meta":{"M":0.0440098,"Tc":304.1282,"pc":7377298.3734467
     factsTitle: 'Refrigerant fact sheets', factsSub: 'properties, particulars, regulation',
     copied: 'Copied to clipboard', copyFail: 'Copying not possible – the table is selected', saved: 'Saved', saveFail: 'Saving is not possible here', saveBusy: 'A save dialog is already open', saveAs: 'Save as',
     errTlow: 'Evaporation below the valid range (min. {T} °C)', errT0crit: 'Evaporation temperature too close to the critical point', errLift: 'Condensation must be at least 3 K above evaporation', errTrans: 'Transcritical operation not tabulated', errCalc: 'Calculation not possible', errQ0: 'No refrigerating effect: gas-cooler outlet too warm for this refrigerant', errRange: 'State outside the tabulated range', errSupercrit: 'Temperature above the critical temperature',
-    pre_fridge: 'Refrigerator', pre_nk: 'Medium temp.', pre_tk: 'Low temp.', pre_ac: 'Air conditioning', pre_chiller: 'Chiller', pre_mac: 'Car AC', pre_hpnew: 'HP new build', pre_hpold: 'HP retrofit', pre_hthp: 'High-temp. HP',
+    pre_fridge: 'Refrigerator', pre_nk: 'Medium temp.', pre_tk: 'Low temp.', pre_ac: 'Air conditioning', pre_chiller: 'Chiller', pre_mac: 'Car AC', pre_hpnew: 'Heat pump, new build', pre_hpold: 'Heat pump, retrofit', pre_hthp: 'High-temp. heat pump',
     gPreset: 'Application', gOp: 'Operating point', lT0: 'Evaporation', lTc: 'Condensation', lTgc: 'Gas-cooler outlet', lSh: 'Superheat', lSc: 'Subcooling',
     gTrans: 'High pressure', gTransSub: 'transcritical', pHiAuto: 'COP-optimal', pHiMan: 'manual', lPhi: 'Gas-cooler pressure', pHiOpt: 'Optimum high pressure for {f}: {p} bar',
     gComp: 'Compressor and IHX', lEta: 'Isentropic efficiency', lIhx: 'Internal heat exchanger',
